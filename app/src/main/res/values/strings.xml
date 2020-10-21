@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BrickApp</string>
+    <string name="app_name">Lego App</string>
     <string name="btn_search">Search</string>
     <string name="btn_register">Register</string>
     <string name="btn_setup">Options &amp; Setup</string>

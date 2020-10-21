@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("flx", "btnSearch.onClick()");
+                Intent intent = new Intent(MainActivity.this, VoleyActivity.class);
+                startActivity(intent);
             }
         });
         btnSetup.setOnClickListener(new View.OnClickListener() {

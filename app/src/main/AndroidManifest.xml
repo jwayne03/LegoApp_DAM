@@ -2,13 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wayne.brickapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="false"
-        android:icon="@mipmap/legologo"
+        android:icon="@drawable/legologo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/legologo"
+        android:roundIcon="@drawable/legologo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".VoleyActivity"></activity>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/NoTitle">
