@@ -43,6 +43,25 @@ public class SearchActivity extends AppCompatActivity {
         settings();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences prefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);
+        String search = prefs.getString("search", " ");
+        editTextSearch.setText(search);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences prefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);
+        SharedPreferences.Editor ed = prefs.edit();
+
+        Editable search = editTextSearch.getText();
+        ed.putString("search", String.valueOf(search));
+        ed.apply();
+    }
+
     private void search() {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override

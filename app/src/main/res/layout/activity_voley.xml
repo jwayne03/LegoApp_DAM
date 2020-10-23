@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".SearchActivity">
 
     <LinearLayout
-        android:layout_width="332dp"
-        android:layout_height="540dp"
-        android:layout_marginStart="6dp"
+        android:layout_width="394dp"
+        android:layout_height="560dp"
         android:layout_marginTop="59dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,8 +25,7 @@
             <TextView
                 android:id="@+id/tvResults"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_height="wrap_content" />
         </ScrollView>
     </LinearLayout>
 
@@ -42,10 +41,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="334dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="10dp"
+        android:layout_width="400dp"
+        android:layout_height="72dp"
+        android:background="#FFFFFF"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,14 +60,14 @@
         <ImageButton
             android:id="@+id/searchImageButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/search" />
 
         <ImageButton
             android:id="@+id/settingsImageButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/settings" />
 
