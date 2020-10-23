@@ -4,6 +4,7 @@
     <string name="btn_register">Register</string>
     <string name="btn_setup">Options &amp; Setup</string>
     <string name="lbl_settings">Settings</string>
+    <string name="lbl_search">Search</string>
     <string name="chk_filter_by_year">Filter by year</string>
     <string name="lbl_from_year">From year</string>
     <string name="lbl_to_year">To year</string>

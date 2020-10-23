@@ -52,7 +52,7 @@ public class SplashActivity extends AppCompatActivity implements Runnable {
                 intent = new Intent(this, EnterApiKeyActivity.class);
             } else {
                 // All went well, continue to the main activity
-                intent = new Intent(this, MainActivity.class);
+                intent = new Intent(this, SearchActivity.class);
             }
             // Replace the current activity so the back button
             // will exit the app after loading the new activity

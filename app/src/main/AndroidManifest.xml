@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/legologo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VoleyActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/NoTitle">
@@ -21,7 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
         <activity android:name=".EnterApiKeyActivity" />
         <activity android:name=".SettingsActivity" />
     </application>
