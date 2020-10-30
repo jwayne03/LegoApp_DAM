@@ -53,7 +53,6 @@ public class SearchActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
-
         search();
         settings();
     }
@@ -64,6 +63,7 @@ public class SearchActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);
         String search = prefs.getString("search", " ");
         editTextSearch.setText(search);
+        search();
     }
 
     @Override
