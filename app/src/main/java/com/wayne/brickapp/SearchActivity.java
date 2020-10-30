@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -20,6 +23,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
+import com.wayne.brickapp.model.ApiThemes;
+import com.wayne.brickapp.model.ThemeAdapter;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -27,6 +33,7 @@ public class SearchActivity extends AppCompatActivity {
     TextView tvResults, tvYourApiKey;
     EditText editTextSearch;
     ImageButton searchButton, settingsButton;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,14 @@ public class SearchActivity extends AppCompatActivity {
         tvYourApiKey = findViewById(R.id.tvYourApiKey);
         searchButton = findViewById(R.id.searchImageButton);
         settingsButton = findViewById(R.id.settingsImageButton);
+        listView = findViewById(R.id.listView);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(SearchActivity.this, "Click en theme id: " + id,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
         search();
         settings();
@@ -71,15 +86,23 @@ public class SearchActivity extends AppCompatActivity {
                 Log.d("wayne", "API Key = " + apiKey);
 
                 RequestQueue queue = Volley.newRequestQueue(SearchActivity.this);
-                StringRequest request = new StringRequest(Request.Method.GET,
+                StringRequest request = new StringRequest(
+                        Request.Method.GET,
                         "https://rebrickable.com/api/v3/lego/sets?" +
                                 "key=" + apiKey + "&search=" + editTextSearch.getText(),
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
                                 Log.d("wayne", "onResponse: " + response);
-                                tvResults.setText(response);
+                                Gson gson = new Gson();
+                                ApiThemes themes = gson.fromJson(response, ApiThemes.class);
+                                tvResults.setText("TOTAL: " + themes.getCount() + " themes");
+                                ThemeAdapter adapter = new ThemeAdapter(themes.getResults());
+                                listView.setAdapter(adapter);
                                 progressBar.setVisibility(View.GONE);
+                                Snackbar.make(tvResults, "TOTAL: " + themes.getCount()
+                                        + " themes", 2000)
+                                        .show();
                             }
                         },
                         new Response.ErrorListener() {

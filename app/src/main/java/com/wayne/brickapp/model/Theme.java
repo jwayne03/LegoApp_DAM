@@ -1,0 +1,24 @@
+package com.wayne.brickapp.model;
+
+import com.google.gson.annotations.SerializedName;
+
+public class Theme {
+
+    private int id;
+    @SerializedName("parent_id")
+    private Integer parentId;
+    private String name;
+
+    public Theme(Integer id, int parent_id, String name) {
+        this.id = id;
+        this.parentId = parent_id;
+        this.name = name;
+    }
+
+    public int getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+    public int getParentId() { return parentId; }
+    public void setParentId(Integer parentId) { this.parentId = parentId; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+}
