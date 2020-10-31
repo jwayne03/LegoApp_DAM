@@ -32,10 +32,10 @@ public class EnterApiKeyActivity extends AppCompatActivity {
                     edApiKey.setError(getString(R.string.hint_cannot_be_empty));
                     return;
                 }
-//                if (!apiKey.matches("[0-9a-f]{32}")) {
-//                    edApiKey.setError(getString(R.string.hint_bad_format));
-//                    return;
-//                }
+                if (!apiKey.matches("[0-9a-f]{32}")) {
+                    edApiKey.setError(getString(R.string.hint_bad_format));
+                    return;
+                }
 
                 // TODO REAL NETWORK CHECK WILL BE STARTED HERE!!!
 
@@ -52,7 +52,7 @@ public class EnterApiKeyActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onResume() {
+    protected void onResume() {
         super.onResume();
         // Display the current API key
         SharedPreferences prefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);

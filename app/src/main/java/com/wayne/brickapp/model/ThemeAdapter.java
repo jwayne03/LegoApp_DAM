@@ -22,7 +22,7 @@ public class ThemeAdapter extends BaseAdapter {
     @Override public int getCount() { return themes.size(); }
     @Override public Object getItem(int position) { return themes.get(position); }
     @Override public long getItemId(int position) {
-        Theme theme = themes.get(position);
+//        Theme theme = themes.get(position);
         return position;
     }
 

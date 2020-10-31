@@ -207,7 +207,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onResume() {
+    protected void onResume() {
         super.onResume();
         SharedPreferences prefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);
 
@@ -249,7 +249,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onPause() {
+    protected void onPause() {
         super.onPause();
         SharedPreferences prefs = getSharedPreferences(getPackageName(), MODE_PRIVATE);
         SharedPreferences.Editor ed = prefs.edit();
