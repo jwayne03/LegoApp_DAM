@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Theme {
 
+    @SerializedName("theme_id")
     private int id;
     @SerializedName("parent_id")
     private Integer parentId;

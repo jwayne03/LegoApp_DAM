@@ -7,44 +7,10 @@
     android:background="#FFFFFF"
     tools:context=".SearchActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="400dp"
-        android:layout_height="72dp"
-        android:background="#FFFFFF"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/editTextSearch"
-            android:layout_width="264dp"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
-
-        <ImageButton
-            android:id="@+id/searchImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/search" />
-
-        <ImageButton
-            android:id="@+id/settingsImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/settings" />
-
-    </LinearLayout>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="388dp"
-        android:layout_height="535dp"
+        android:layout_width="399dp"
+        android:layout_height="661dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,10 +31,10 @@
         android:id="@+id/tvResults"
         android:layout_width="375dp"
         android:layout_height="24dp"
-        android:layout_marginTop="8dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        tools:layout_editor_absoluteY="27dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

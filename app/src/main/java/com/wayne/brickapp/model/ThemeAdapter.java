@@ -1,11 +1,9 @@
 package com.wayne.brickapp.model;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,37 +13,32 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import com.wayne.brickapp.R;
 
-import java.util.List;
-
 public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> {
 
-    private List<Theme> themes;
+    private ApiThemes apiThemes;
     private final Context context;
-    private final int layoutResource;
 
-    public ThemeAdapter(Context context, List<Theme> themes, int layoutResource) {
+    public ThemeAdapter(Context context,ApiThemes apiThemes) {
         this.context = context;
-        this.themes = themes;
-        this.layoutResource = layoutResource;
+        this.apiThemes = apiThemes;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(layoutResource, parent, false);
-        return null;
+        View view = LayoutInflater.from(context).inflate(R.layout.item_theme, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        themes = (List<Theme>) themes.get(position);
+        holder.setTheme(apiThemes.getResults().get(position));
     }
 
     @Override
     public int getItemCount() {
-        return themes.size();
+        return apiThemes.getCount();
     }
-
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivLegoImage;
@@ -60,15 +53,13 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
         }
 
         Theme theme;
-
         public void setTheme(Theme theme) {
             this.theme = theme;
             tvThemeName.setText(theme.getName());
-            Picasso.with(context).load(theme.getName()).into(ivLegoImage);
+            tvThemeId.setText(String.valueOf(theme.getId()));
+            Picasso.with(context).load(theme.getImageUrl()).into(ivLegoImage);
         }
     }
-
-
 }
 
 
