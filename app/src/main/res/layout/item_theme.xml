@@ -7,38 +7,36 @@
 
     <TextView
         android:id="@+id/tvThemeName"
-        android:layout_width="141dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="224dp"
+        android:layout_height="45dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tvThemeId"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toEndOf="@+id/ivLegoImage"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvThemeId"
-        android:layout_width="96dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
+        android:layout_width="142dp"
+        android:layout_height="17dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:textSize="28sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.736"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/ivLegoImage"
-        android:layout_width="119dp"
-        android:layout_height="107dp"
-        app:layout_constraintEnd_toStartOf="@+id/tvThemeId"
-        app:layout_constraintHorizontal_bias="0.355"
+        android:layout_width="131dp"
+        android:layout_height="110dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
