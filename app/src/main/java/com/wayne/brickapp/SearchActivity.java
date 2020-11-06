@@ -98,13 +98,14 @@ public class SearchActivity extends AppCompatActivity {
         editor.putString("lastSearch", query);
         editor.apply();
 
+        String url = "https://rebrickable.com/api/v3/lego/sets?key=";
         String apiKey = prefs.getString("apiKey", "");
-        Log.d("wayne", "API Key = " + apiKey);
+        Log.d("wayne", "API Key = " + apiKey );
 
         RequestQueue queue = Volley.newRequestQueue(SearchActivity.this);
         StringRequest request = new StringRequest(
                 Request.Method.GET,
-                "https://rebrickable.com/api/v3/lego/sets?key=" + apiKey + "&search=" + query,
+                url + apiKey + "&search=" + query + "&page_size=20000",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

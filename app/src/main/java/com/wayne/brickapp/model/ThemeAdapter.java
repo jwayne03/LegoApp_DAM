@@ -37,7 +37,7 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return apiThemes.getCount();
+        return apiThemes.getResults().size();
     }
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
