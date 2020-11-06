@@ -23,6 +23,6 @@ public class ApiThemes {
     public void setNext(String next) { this.next = next; }
     public String getPrevious() { return previous; }
     public void setPrevious(String previous) { this.previous = previous; }
-    public List<Theme> getResults() { return results; }
-    public void setResults(List<Theme> results) { this.results = results; }
+//    public List<Theme> getResults() { return results; }
+//    public void setResults(List<Theme> results) { this.results = results; }
 }
